@@ -12,7 +12,7 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// defines PUT route using indexDB
 export const putDb = async (content) => {
   console.log('PUT in the Database');
   const jateDB = await openDB('text', 1);
@@ -24,7 +24,7 @@ export const putDb = async (content) => {
  
 };
 
-// TODO: Add logic for a method that gets all the content from the database
+// defines GET route with indexDB
 export const getDb = async () => {
 console.log("GET data from jateDB");
 const jateDB = await openDB('jateDB', 1);
