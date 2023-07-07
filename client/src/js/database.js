@@ -15,9 +15,9 @@ const initdb = async () =>
 // defines PUT route using indexDB
 export const putDb = async (content) => {
   console.log('PUT in the Database');
-  const jateDB = await openDB('text', 1);
-  const tx = jateDB.transaction('text', 'readwrite');
-  const store = tx.objectStore('text');
+  const jateDB = await openDB('jate', 1);
+  const tx = jateDB.transaction('jate', 'readwrite');
+  const store = tx.objectStore('jate');
   const request = store.put({text: content});
   const result = await request;
   console.log('data saved', result); 
@@ -27,13 +27,13 @@ export const putDb = async (content) => {
 // defines GET route with indexDB
 export const getDb = async () => {
 console.log("GET data from jateDB");
-const jateDB = await openDB('jateDB', 1);
-const tx = jateDB.transaction('jateDB', 'readonly');
-const store = tx.objectStore('jateDB');
+const jateDB = await openDB('jate', 1);
+const tx = jateDB.transaction('jate', 'readonly');
+const store = tx.objectStore('jate');
 const request = store.getAll();
 const result = await request;
 
-console.log('result.value', result);
+console.log('Jate DB data pulled', result);
 
 };
 
